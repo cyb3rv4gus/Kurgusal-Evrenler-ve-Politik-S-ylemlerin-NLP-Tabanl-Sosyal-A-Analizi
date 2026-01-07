@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veri Görselleştirme Projesi | [ADIN SOYADIN]</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #2980b9; padding-left: 10px; }
+        p { font-size: 1.1em; line-height: 1.6; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: #ecf0f1; padding: 20px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; border-top: 4px solid #3498db; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #eef2f3; }
+        .card a { text-decoration: none; color: #2c3e50; font-weight: bold; display: block; font-size: 1.05em; }
+        .card span { display: block; font-size: 0.85em; color: #7f8c8d; margin-top: 8px; }
+        footer { margin-top: 60px; text-align: center; font-size: 0.9em; color: #777; border-top: 1px solid #ddd; padding-top: 20px; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; color: white; margin-bottom: 5px; }
+        .badge-net { background-color: #e67e22; }
+        .badge-stat { background-color: #27ae60; }
+        .badge-nlp { background-color: #8e44ad; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sosyal Ağ Analizi ve NLP Proje Portföyü</h1>
+    <p><strong>Öğrenci:</strong> [ADIN SOYADIN] - [NUMARAN]<br>
+    <strong>Ders:</strong> Veri Görselleştirme ve Graf Analizi</p>
+    <p>Aşağıdaki kartlara tıklayarak analizlerin interaktif çıktılarını inceleyebilirsiniz.</p>
+
+    <h2>1. Kurgusal Evren Analizleri (Marvel vs Star Wars)</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="badge badge-net">Ağ Haritası</span>
+            <a href="marvel_network_interactive_plotly.html" target="_blank">Marvel Network</a>
+            <span>Renklendirilmiş Topluluk Yapısı (Louvain)</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">İstatistik</span>
+            <a href="marvel_degree_distribution.html" target="_blank">Marvel Degree Dist.</a>
+            <span>Derece Dağılımı Histogramı</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">İstatistik</span>
+            <a href="marvel_louvain_sizes.html" target="_blank">Marvel Communities</a>
+            <span>Topluluk Büyüklükleri Dağılımı</span>
+        </div>
+
+        <div class="card">
+            <span class="badge badge-net">Ağ Haritası</span>
+            <a href="starwars_network_interactive_plotly.html" target="_blank">Star Wars Network</a>
+            <span>Karakter Etkileşim Ağı</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">İstatistik</span>
+            <a href="starwars_degree_distribution.html" target="_blank">Star Wars Degree Dist.</a>
+            <span>Derece Dağılımı Histogramı</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">İstatistik</span>
+            <a href="starwars_louvain_sizes.html" target="_blank">Star Wars Communities</a>
+            <span>Topluluk Büyüklükleri Dağılımı</span>
+        </div>
+
+        <div class="card" style="grid-column: span 1; background-color: #d6eaf8;">
+            <span class="badge badge-stat" style="background-color:#2980b9;">Karşılaştırma</span>
+            <a href="compare_marvel_starwars_metrics.html" target="_blank">Marvel vs Star Wars</a>
+            <span>Radar Grafiği ile Metrik Kıyaslaması</span>
+        </div>
+    </div>
+
+    <h2>2. Politik Varlık & Duygu Analizi (US vs AU)</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="badge badge-nlp">NER Ağı</span>
+            <a href="us_entity_network_plotly.html" target="_blank">US Entity Network</a>
+            <span>Trump/Biden Eş-Görülme Ağı</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">Zaman Serisi</span>
+            <a href="US_Election_daily_sentiment.html" target="_blank">US Daily Sentiment</a>
+            <span>Günlük Duygu Değişimi</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">Zaman Serisi</span>
+            <a href="US_Election_daily_entitycount.html" target="_blank">US Entity Count</a>
+            <span>Günlük Konu/Varlık Yoğunluğu</span>
+        </div>
+
+        <div class="card">
+            <span class="badge badge-nlp">NER Ağı</span>
+            <a href="au_entity_network_plotly.html" target="_blank">AU Entity Network</a>
+            <span>Avustralya Seçim Ağı</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">Zaman Serisi</span>
+            <a href="AU_Election_daily_sentiment.html" target="_blank">AU Daily Sentiment</a>
+            <span>Günlük Duygu Değişimi</span>
+        </div>
+        <div class="card">
+            <span class="badge badge-stat">Zaman Serisi</span>
+            <a href="AU_Election_daily_entitycount.html" target="_blank">AU Entity Count</a>
+            <span>Günlük Konu/Varlık Yoğunluğu</span>
+        </div>
+
+        <div class="card" style="grid-column: span 1; background-color: #d6eaf8;">
+            <span class="badge badge-stat" style="background-color:#2980b9;">Karşılaştırma</span>
+            <a href="compare_us_au_entity_metrics.html" target="_blank">US vs AU Metrics</a>
+            <span>Radar Grafiği ile Yapısal Kıyaslama</span>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 İsmet ARSLAN. Bu proje Python, NetworkX, spaCy ve Plotly kullanılarak hazırlanmıştır.
+    </footer>
+</div>
+
+</body>
+</html>
