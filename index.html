@@ -1,147 +1,122 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Final Academic Dashboard</title><style>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Scientific Analysis Dashboard</title><style>
     body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #333; margin:0; padding:20px; }
-    .container { max-width: 1400px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
+    h1 { color: #1a73e8; margin:0; }
+    .card { background: white; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 6px solid #1a73e8; }
+    .badge { background: #e8f0fe; color: #1a73e8; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
     
-    /* Header */
-    .header { text-align: center; background: linear-gradient(135deg, #1a73e8, #673ab7); color: white; padding: 50px 20px; border-radius: 12px; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .header h1 { margin:0; font-size: 2.5em; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-    .header p { font-size: 1.1em; opacity: 0.9; }
-    
-    /* Kartlar */
-    .card { background: white; border-radius: 12px; padding: 30px; margin-bottom: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-    .card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f0f2f5; padding-bottom: 15px; margin-bottom: 20px; }
-    
-    /* Butonlar */
-    .btn { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9em; transition: 0.3s; margin-right: 8px; margin-bottom: 8px; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .section-title { font-weight: bold; margin-top: 25px; margin-bottom: 10px; color: #444; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { text-decoration: none; padding: 8px 16px; border-radius: 5px; font-size: 0.9em; font-weight: 600; transition: 0.2s; }
     .btn-primary { background: #1a73e8; color: white; }
-    .btn-sci { background: #673ab7; color: white; } /* Bilimsel Mor */
+    .btn-sci { background: #7b1fa2; color: white; } /* Bilimsel Mor */
     .btn-warn { background: #f57c00; color: white; }
-    .btn-outline { border: 1px solid #ccc; color: #555; background: white; }
+    .btn:hover { opacity: 0.9; transform: translateY(-1px); }
     
-    /* Bölümler */
-    .section-title { font-size: 1.2em; font-weight: bold; color: #444; margin: 30px 0 15px 0; display: flex; align-items: center; gap: 8px; }
-    .section-title::before { content: ''; display: block; width: 5px; height: 20px; background: #1a73e8; border-radius: 3px; }
-    
-    /* Izgaralar */
-    .plot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); gap: 30px; margin-top: 20px; }
-    .iframe-box { border: none; width: 100%; height: 550px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: white; }
-    
-    .sci-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
-    .sci-box { background: #f8f9fa; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid #e0e0e0; }
-    .sci-box img { max-width: 100%; height: auto; border-radius: 5px; cursor: pointer; transition: 0.2s; }
-    .sci-box img:hover { transform: scale(1.02); }
-    
-    .badge { background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 20px; font-size: 0.8em; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-top: 20px; }
+    .plot-box { border: 1px solid #eee; border-radius: 8px; overflow: hidden; background: #fff; }
+    .plot-box img { width: 100%; height: auto; display: block; }
+    .plot-caption { padding: 8px; text-align: center; font-size: 0.85em; color: #666; background: #fafafa; border-top: 1px solid #eee; }
     </style></head><body>
     <div class="container">
         <div class="header">
-            <h1>🚀 Sosyal Ağ Analizi: Büyük Final Raporu</h1>
-            <p>NLP, Ağ Bilimi, Robustness Testleri ve İnteraktif Görselleştirmeler</p>
-            <div style="margin-top:15px"><span class="badge">Son Güncelleme: 08.02.2026 20:20</span></div>
+            <h1>🔬 Sosyal Ağ & Bilimsel Validasyon Raporu</h1>
+            <p>Otomatik Robustness, Kalibrasyon ve Metodolojik Doğrulama Sonuçları</p>
+            <small>Son Güncelleme: 09.02.2026 00:06</small>
         </div>
     
         <div class="card">
-            <div class="card-header">
-                <h2 style="margin:0; color:#1a73e8;">Analiz Paketi: 20260208</h2>
-                <a href="https://github.com/cyb3rv4gus/Kurgusal-Evrenler-ve-Politik-S-ylemlerin-NLP-Tabanl-Sosyal-A-Analizi/blob/main/Results_20260208_1307/paper_artifacts.md" class="btn btn-outline" target="_blank">📄 Raporu İncele</a>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2 style="margin:0;">Analiz Paketi: 20260208</h2>
+                <span class="badge">Results_20260208_2130</span>
             </div>
             
-            <div class="section-title">🌍 Küresel Ağ Haritaları</div>
-            <div>
-                <a href="Results_20260208_1307/interactive_maps_TR/US_Election_Map_TR.html" class="btn btn-primary" target="_blank">🇺🇸 US Election Haritası</a>
-                <a href="Results_20260208_1307/interactive_maps_TR/AU_Election_Map_TR.html" class="btn btn-primary" target="_blank">🦘 AU Election Haritası</a>
+            <div class="section-title">📄 Bilimsel Rapor & Kanıtlar</div>
+            <div class="btn-group">
+                <a href="https://github.com/cyb3rv4gus/Kurgusal-Evrenler-ve-Politik-S-ylemlerin-NLP-Tabanl-Sosyal-A-Analizi/blob/main/Results_20260208_2130/paper_artifacts.md" class="btn btn-primary" target="_blank">📝 Paper Artifacts (Markdown)</a>
+                <a href="Results_20260208_2130/tables/confidence_intervals.csv" class="btn btn-sci" target="_blank">📊 Bootstrap CI (%95)</a>
+                <a href="Results_20260208_2130/tables/seed_robustness.csv" class="btn btn-sci" target="_blank">🛡️ Robustness Data</a>
             </div>
             
-            <div class="section-title">🧪 Bilimsel Derinlik Analizi (SCI-PACK)</div>
-            <div class="sci-grid">
+            <div class="section-title">⚖️ Kalibrasyon & Validasyon</div>
+            <div class="btn-group">
+                <a href="Results_20260208_2130/tables/calibration_distance.csv" class="btn btn-warn" target="_blank">📏 Calibration Distance</a>
+                <a href="Results_20260208_2130/tables/failure_modes.csv" class="btn btn-warn" target="_blank">🚩 Failure Flags</a>
+                <a href="Results_20260208_2130/tables/global_metrics.csv" class="btn btn-primary" target="_blank">🔢 Global Metrics</a>
+            </div>
+            
+            <div class="section-title">📈 Görsel Kanıtlar (CCDF, Stability Boxplots)</div>
+            <div class="gallery">
                 
-            </div>
-            <div style="margin-top:10px;">
-                <a href="Results_20260208_1307/tables/advanced_scientific_analysis.csv" class="btn btn-sci" target="_blank">📥 Bilimsel Veriyi İndir (CSV)</a>
-                <a href="Results_20260208_1307/tables/seed_robustness.csv" class="btn btn-sci" target="_blank">🎲 Robustness Verisi</a>
-            </div>
-
-            <div class="section-title">📈 İnteraktif Analiz Grafikleri (Janjanlı)</div>
-            <div class="plot-grid">
-        
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 1 Radar Clean</h4>
-                    <iframe class="iframe-box" src="Results_20260208_1307/plots_html/Analiz_1_Radar_Clean.html" loading="lazy"></iframe>
+                <div class="plot-box">
+                    <a href="Results_20260208_2130/plots/fig_ccdf_degree_AU_Election.png" target="_blank"><img src="Results_20260208_2130/plots/fig_ccdf_degree_AU_Election.png" loading="lazy"></a>
+                    <div class="plot-caption">fig_ccdf_degree_AU_Election</div>
                 </div>
-            
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 2 Stabilite Clean</h4>
-                    <iframe class="iframe-box" src="Results_20260208_1307/plots_html/Analiz_2_Stabilite_Clean.html" loading="lazy"></iframe>
+                <div class="plot-box">
+                    <a href="Results_20260208_2130/plots/fig_ccdf_degree_Marvel.png" target="_blank"><img src="Results_20260208_2130/plots/fig_ccdf_degree_Marvel.png" loading="lazy"></a>
+                    <div class="plot-caption">fig_ccdf_degree_Marvel</div>
                 </div>
-            
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 3 Derece LogLog Clean</h4>
-                    <iframe class="iframe-box" src="Results_20260208_1307/plots_html/Analiz_3_Derece_LogLog_Clean.html" loading="lazy"></iframe>
+                <div class="plot-box">
+                    <a href="Results_20260208_2130/plots/fig_ccdf_degree_StarWars.png" target="_blank"><img src="Results_20260208_2130/plots/fig_ccdf_degree_StarWars.png" loading="lazy"></a>
+                    <div class="plot-caption">fig_ccdf_degree_StarWars</div>
                 </div>
-            
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 4 Sentiment Violin</h4>
-                    <iframe class="iframe-box" src="Results_20260208_1307/plots_html/Analiz_4_Sentiment_Violin.html" loading="lazy"></iframe>
+                <div class="plot-box">
+                    <a href="Results_20260208_2130/plots/fig_ccdf_degree_US_Election.png" target="_blank"><img src="Results_20260208_2130/plots/fig_ccdf_degree_US_Election.png" loading="lazy"></a>
+                    <div class="plot-caption">fig_ccdf_degree_US_Election</div>
                 </div>
-            
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 5 Entities Clean</h4>
-                    <iframe class="iframe-box" src="Results_20260208_1307/plots_html/Analiz_5_Entities_Clean.html" loading="lazy"></iframe>
-                </div>
-            
             </div>
         </div>
         
         <div class="card">
-            <div class="card-header">
-                <h2 style="margin:0; color:#1a73e8;">Analiz Paketi: 1307</h2>
-                <a href="https://github.com/cyb3rv4gus/Kurgusal-Evrenler-ve-Politik-S-ylemlerin-NLP-Tabanl-Sosyal-A-Analizi/blob/main/Results_1307/paper_artifacts.md" class="btn btn-outline" target="_blank">📄 Raporu İncele</a>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2 style="margin:0;">Analiz Paketi: 20260208</h2>
+                <span class="badge">Results_20260208_1307</span>
             </div>
             
-            <div class="section-title">🌍 Küresel Ağ Haritaları</div>
-            <div>
-                <a href="Results_1307/interactive_maps_TR/US_Election_Map_TR.html" class="btn btn-primary" target="_blank">🇺🇸 US Election Haritası</a>
-                <a href="Results_1307/interactive_maps_TR/AU_Election_Map_TR.html" class="btn btn-primary" target="_blank">🦘 AU Election Haritası</a>
+            <div class="section-title">📄 Bilimsel Rapor & Kanıtlar</div>
+            <div class="btn-group">
+                <a href="https://github.com/cyb3rv4gus/Kurgusal-Evrenler-ve-Politik-S-ylemlerin-NLP-Tabanl-Sosyal-A-Analizi/blob/main/Results_20260208_1307/paper_artifacts.md" class="btn btn-primary" target="_blank">📝 Paper Artifacts (Markdown)</a>
+                <a href="Results_20260208_1307/tables/confidence_intervals.csv" class="btn btn-sci" target="_blank">📊 Bootstrap CI (%95)</a>
+                <a href="Results_20260208_1307/tables/seed_robustness.csv" class="btn btn-sci" target="_blank">🛡️ Robustness Data</a>
             </div>
             
-            <div class="section-title">🧪 Bilimsel Derinlik Analizi (SCI-PACK)</div>
-            <div class="sci-grid">
+            <div class="section-title">⚖️ Kalibrasyon & Validasyon</div>
+            <div class="btn-group">
+                <a href="Results_20260208_1307/tables/calibration_distance.csv" class="btn btn-warn" target="_blank">📏 Calibration Distance</a>
+                <a href="Results_20260208_1307/tables/failure_modes.csv" class="btn btn-warn" target="_blank">🚩 Failure Flags</a>
+                <a href="Results_20260208_1307/tables/global_metrics.csv" class="btn btn-primary" target="_blank">🔢 Global Metrics</a>
+            </div>
+            
+            <div class="section-title">📈 Görsel Kanıtlar (CCDF, Stability Boxplots)</div>
+            <div class="gallery">
                 
             </div>
-            <div style="margin-top:10px;">
-                <a href="Results_1307/tables/advanced_scientific_analysis.csv" class="btn btn-sci" target="_blank">📥 Bilimsel Veriyi İndir (CSV)</a>
-                <a href="Results_1307/tables/seed_robustness.csv" class="btn btn-sci" target="_blank">🎲 Robustness Verisi</a>
-            </div>
-
-            <div class="section-title">📈 İnteraktif Analiz Grafikleri (Janjanlı)</div>
-            <div class="plot-grid">
+        </div>
         
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 1 Radar Clean</h4>
-                    <iframe class="iframe-box" src="Results_1307/plots_html/Analiz_1_Radar_Clean.html" loading="lazy"></iframe>
-                </div>
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2 style="margin:0;">Analiz Paketi: 1307</h2>
+                <span class="badge">Results_1307</span>
+            </div>
             
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 2 Stabilite Clean</h4>
-                    <iframe class="iframe-box" src="Results_1307/plots_html/Analiz_2_Stabilite_Clean.html" loading="lazy"></iframe>
-                </div>
+            <div class="section-title">📄 Bilimsel Rapor & Kanıtlar</div>
+            <div class="btn-group">
+                <a href="https://github.com/cyb3rv4gus/Kurgusal-Evrenler-ve-Politik-S-ylemlerin-NLP-Tabanl-Sosyal-A-Analizi/blob/main/Results_1307/paper_artifacts.md" class="btn btn-primary" target="_blank">📝 Paper Artifacts (Markdown)</a>
+                <a href="Results_1307/tables/confidence_intervals.csv" class="btn btn-sci" target="_blank">📊 Bootstrap CI (%95)</a>
+                <a href="Results_1307/tables/seed_robustness.csv" class="btn btn-sci" target="_blank">🛡️ Robustness Data</a>
+            </div>
             
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 3 Derece LogLog Clean</h4>
-                    <iframe class="iframe-box" src="Results_1307/plots_html/Analiz_3_Derece_LogLog_Clean.html" loading="lazy"></iframe>
-                </div>
+            <div class="section-title">⚖️ Kalibrasyon & Validasyon</div>
+            <div class="btn-group">
+                <a href="Results_1307/tables/calibration_distance.csv" class="btn btn-warn" target="_blank">📏 Calibration Distance</a>
+                <a href="Results_1307/tables/failure_modes.csv" class="btn btn-warn" target="_blank">🚩 Failure Flags</a>
+                <a href="Results_1307/tables/global_metrics.csv" class="btn btn-primary" target="_blank">🔢 Global Metrics</a>
+            </div>
             
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 4 Sentiment Violin</h4>
-                    <iframe class="iframe-box" src="Results_1307/plots_html/Analiz_4_Sentiment_Violin.html" loading="lazy"></iframe>
-                </div>
-            
-                <div>
-                    <h4 style="text-align:center; color:#555; margin-bottom:10px;">Analiz 5 Entities Clean</h4>
-                    <iframe class="iframe-box" src="Results_1307/plots_html/Analiz_5_Entities_Clean.html" loading="lazy"></iframe>
-                </div>
-            
+            <div class="section-title">📈 Görsel Kanıtlar (CCDF, Stability Boxplots)</div>
+            <div class="gallery">
+                
             </div>
         </div>
         </div></body></html>
